@@ -10,6 +10,9 @@ const getLinks = () => {
 let currentIndex = null;
 
 document.addEventListener('keyup', (e) => {
+  const focused = document.activeElement;
+  if (focused.tagName.toLowerCase() === 'input') { return; }
+  
   const links = getLinks();
   if (e.keyCode !== J && e.keyCode !== K) { return; }
 
